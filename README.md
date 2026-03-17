@@ -1,92 +1,48 @@
-# Banking Asset Quality Forecasting using RBI Data
+# 🏦 Banking Asset Quality: Macro-Financial Stress Testing Framework
 
-## 📌 Project Overview
-This project focuses on forecasting **banking asset quality deterioration** in India using officially published data from the **Reserve Bank of India (RBI)**. The objective is to model and explain the evolution of **Gross Non-Performing Assets (GNPA)** for Scheduled Commercial Banks by leveraging balance-sheet indicators and historical stress persistence.
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_svg.svg)](https://banking-asset-quality-forecasting-using-rbi-data-badxve4dyejjf.streamlit.app)
 
-The project emphasizes **real-world data, explainable machine learning, and finance-domain reasoning**, avoiding synthetic datasets or black-box approaches.
-
----
-
-## 🎯 Business Problem
-Non-Performing Assets (NPAs) are a critical indicator of banking system health. Rising NPAs signal:
-- Credit risk accumulation
-- Weakening underwriting standards
-- Potential systemic stress
-
-This project answers the question:
-
-**Can historical balance-sheet dynamics and past stress levels help forecast future GNPA trends in Indian banks?**
+## 🚀 Live Project
+**Interactive Risk Dashboard:** [View Live App](https://banking-asset-quality-forecasting-using-rbi-data-badxve4dyejjf.streamlit.app)
 
 ---
 
-## 📊 Data Source
-- **Source:** Reserve Bank of India (RBI)
-- **Dataset:** Gross and Net NPAs of Scheduled Commercial Banks (Bank Group-wise)
-- **Frequency:** Annual
-- **Bank Group Used:** Scheduled Commercial Banks
+## 📌 Project Executive Summary
+How sensitive is the Indian banking sector to a sudden recession or a spike in inflation? This project transitions from traditional static forecasting to **Dynamic Risk Modeling**. 
 
-The data was cleaned and structured manually to ensure accuracy and reproducibility.
+Using historical **Reserve Bank of India (RBI)** statistical data, I engineered a predictive engine for **Gross Non-Performing Assets (GNPA)**. The framework allows users to apply synthetic "shocks" to the economy to observe how asset quality degrades under pressure. It is designed to mimic the stress-testing protocols used by central banks and internal risk committees to assess financial stability.
 
 ---
 
-## 🧾 Key Variables
+## 🧠 The Analytics "Risk Funnel"
+The project utilizes a two-stage modeling approach to quantify credit risk and capital vulnerability:
 
-### Target Variable
-- **Gross_NPA_Percent_Advances**  
-  (Gross NPAs as a percentage of Gross Advances)
+### 1. Deterministic Stress Testing (Sensitivity Analysis)
+Users can manually adjust macroeconomic stressors—**GDP Growth Shocks, Inflation Spikes, and Interest Rate hikes**—to see the immediate impact on the GNPA ratio. This identifies the "Linear Sensitivity" of bank balance sheets to specific economic levers.
 
-### Explanatory Variables
-- Gross Advances Growth (YoY)
-- Net Advances Growth (YoY)
-- Lagged GNPA (1-year and 2-year lags)
-- Net NPA Percentage
+### 2. Stochastic Monte Carlo Simulation (Tail-Risk)
+Because the future is non-linear and uncertain, the system executes **1,000+ Stochastic Simulations**. By randomly sampling from the distribution of economic variables, it calculates the **95% Value-at-Risk (VaR)**.
+* **Objective:** To identify the "Worst Case Scenario" (the 5% tail-event) where asset quality could spiral out of control, providing a probabilistic view of potential capital erosion.
 
 ---
 
-## ⚙️ Feature Engineering
-To capture banking stress dynamics:
-- **Growth rates** were computed using year-on-year percentage change
-- **Lagged GNPA features** were created to model persistence of credit stress
-- Time-aware splitting was used to prevent data leakage
+## 🛠️ Technical Tech Stack & Methodology
+* **Core Modeling:** Random Forest Regressor (Ensemble Learning) to capture complex, non-linear macro-financial linkages.
+* **Simulation:** Monte Carlo Methods & Stochastic Gaussian Sampling.
+* **Visualization:** Seaborn & Matplotlib for Risk Distribution plotting and Probability Density Analysis.
+* **Frontend:** Streamlit Cloud for real-time model inference and interactive "What-If" analysis.
+* **Data Source:** RBI Statistical Tables Relating to Banks in India.
 
 ---
 
-## 🤖 Models Used
-Three models were implemented and compared:
-
-1. **Linear Regression** – Baseline interpretability check  
-2. **Random Forest Regressor** – Non-linear ensemble model  
-3. **Gradient Boosting Regressor** – Strong performer for tabular financial data  
-
-All models were implemented using **scikit-learn Pipelines**.
+## 📂 Key Features
+* **Real-Time Delta Tracking:** Compares "Baseline" vs. "Stressed" GNPA forecasts instantly to show risk escalation.
+* **Risk Sentiment Logic:** Automatically categorizes results into *Stable*, *Watchlist*, or *Critical* based on industry-standard threshold breach analysis.
+* **Stochastic Distribution:** Visualizes the probability density of potential NPA outcomes to assist in macroprudential oversight.
 
 ---
 
-## 📈 Model Evaluation
-Models were evaluated using:
-- Mean Absolute Error (MAE)
-- R² Score
-- Visual comparison of actual vs predicted GNPA
-
-A time-based train–test split was used to respect temporal ordering.
-
----
-
-## 🔍 Explainability
-To ensure interpretability:
-- **SHAP (SHapley Additive exPlanations)** was used
-- Feature importance and directional impact were analyzed
-- Results confirm that lagged GNPA and advances growth are dominant drivers
-
----
-
-## 🛠️ Tech Stack
-- Python
-- pandas, NumPy
-- scikit-learn
-- matplotlib, seaborn
-- SHAP
-
----
-
-## 📂 Project Structure
+## ⚙️ How to Run Locally
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/devdattachatterjee/banking-asset-quality-forecasting-using-rbi-data.git](https://github.com/devdattachatterjee/banking-asset-quality-forecasting-using-rbi-data.git)
