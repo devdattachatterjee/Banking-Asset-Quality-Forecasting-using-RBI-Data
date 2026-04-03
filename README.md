@@ -1,9 +1,6 @@
 # 🏦 Banking Asset Quality: Macro-Financial Stress Testing Framework
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://banking-asset-quality-forecasting-using-rbi-data-badxve4dyejjf.streamlit.app)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/devdattachatterjee/Banking-Asset-Quality-Forecasting-using-RBI-Data/blob/main/Banking_Asset_Quality_Master_Notebook.ipynb)
-[![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://python.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
